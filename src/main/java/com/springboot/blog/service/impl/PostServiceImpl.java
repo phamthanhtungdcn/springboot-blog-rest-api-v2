@@ -49,6 +49,11 @@ public class PostServiceImpl implements PostService {
         return mapToDTO(updatedPost);
     }
 
+    @Override
+    public void deletePost(Long postId) {
+        postRepository.deleteById(postId);
+    }
+
     public PostDto mapToDTO(Post post){
         PostDto postDto = new PostDto();
         postDto.setId(post.getId());
